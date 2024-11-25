@@ -7,11 +7,16 @@ import cucumber.api.java.en.Then;
 
 public class CucumberStepsDefinition {
 
-    private CatScreenRobot testRobot = new CatScreenRobot();
+    private final CatScreenRobot testRobot = new CatScreenRobot();
 
-    @Given("^I start the application$")
+    /*@Given("^I start the application$")
     public void startApplication() {
         testRobot.launchCatActivity();
+    }*/
+
+    @Given("^I start the application with APK installed$")
+    public void startApplicationWithApk() {
+        testRobot.setupWithInstalledApk();
     }
 
     @When("^I click on the button$")
